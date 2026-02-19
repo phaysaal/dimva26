@@ -1,0 +1,3 @@
+[submodule "repo"]
+	path = repo
+	url = git@github.com:Crypto-TII/nist-pqc-first-round-signatures.git
