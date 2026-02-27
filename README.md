@@ -1,6 +1,6 @@
 # DIMVA 2026 submission 35 - Artifact
 
-```markdown
+
 # DIMVA Artifact Docker Image
 
 This archive contains a prebuilt Docker image for the DIMVA artifact environment.
@@ -95,5 +95,5 @@ To remove the container:
 docker rm dimva_work
 ```
 
-```
-```
+
+
