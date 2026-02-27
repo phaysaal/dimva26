@@ -3,6 +3,12 @@
 
 # DIMVA Artifact Docker Image
 
+Download the archive from
+
+```
+https://zenodo.org/records/18806625
+```
+
 This archive contains a prebuilt Docker image for the DIMVA artifact environment.
 
 The image is compressed using **zstd** and provided as:
