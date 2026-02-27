@@ -9,7 +9,7 @@ The image is compressed using **zstd** and provided as:
 
 ```
 
-dimva_final.tar.zst
+dimva_35_final.tar.zst
 
 ````
 
@@ -20,13 +20,13 @@ dimva_final.tar.zst
 To extract the Docker image tar file:
 
 ```bash
-unzstd dimva_final.tar.zst
+unzstd dimva_35_final.tar.zst
 ````
 
 This will produce:
 
 ```
-dimva_final.tar
+dimva_35_final.tar
 ```
 
 ---
@@ -36,7 +36,7 @@ dimva_final.tar
 Load the image into Docker:
 
 ```bash
-docker load -i dimva_final.tar
+docker load -i dimva_35_final.tar
 ```
 
 Verify that the image was loaded successfully:
@@ -52,10 +52,10 @@ docker images
 Start an interactive container:
 
 ```bash
-docker run -it --name dimva_work dimva:35-final /bin/bash
+docker run -it --name dimva_35 dimva:35-final
 ```
 
-If `/bin/bash` is unavailable, try:
+If it does not work, try `sh` or `bash` explicitely as follows:
 
 ```bash
 docker run -it --name dimva_work dimva:35-final /bin/sh
@@ -67,8 +67,7 @@ docker run -it --name dimva_work dimva:35-final /bin/sh
 
 Once inside the container:
 
-* Navigate to the main project directory.
-* Follow the `README.md` file provided **inside the container** for detailed instructions on running the artifact.
+* Follow the `README.md` file provided in `/import/toolchain` for detailed instructions on running the artifact.
 
 **Important:**
 Ignore any Docker image building instructions mentioned in the internal `README.md`, as the image has already been prebuilt.
@@ -86,13 +85,13 @@ exit
 To restart it later:
 
 ```bash
-docker start -ai dimva_work
+docker start -ai dimva_35
 ```
 
 To remove the container:
 
 ```bash
-docker rm dimva_work
+docker rm dimva_35
 ```
 
 
