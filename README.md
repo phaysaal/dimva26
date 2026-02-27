@@ -1,27 +1,29 @@
 # DIMVA 2026 submission 35 - Artifact
 
-````markdown
+```markdown
 # DIMVA Artifact Docker Image
 
 This archive contains a prebuilt Docker image for the DIMVA artifact environment.
 
----
+The image is compressed using **zstd** and provided as:
 
-## 1. Extract the Archive
-
-If the file is compressed with `xz`:
-
-```bash
-unxz dimva_final.tar.xz
-````
-
-If the file is compressed with `gzip`:
-
-```bash
-gunzip dimva_final.tar.gz
 ```
 
-After extraction, you should have:
+dimva_final.tar.zst
+
+````
+
+---
+
+## 1. Decompress the Archive
+
+To extract the Docker image tar file:
+
+```bash
+unzstd dimva_final.tar.zst
+````
+
+This will produce:
 
 ```
 dimva_final.tar
@@ -37,7 +39,7 @@ Load the image into Docker:
 docker load -i dimva_final.tar
 ```
 
-Verify that the image is available:
+Verify that the image was loaded successfully:
 
 ```bash
 docker images
@@ -47,13 +49,13 @@ docker images
 
 ## 3. Run the Container
 
-Start the container interactively:
+Start an interactive container:
 
 ```bash
 docker run -it --name dimva_work dimva:35-final /bin/bash
 ```
 
-If `/bin/bash` is unavailable, use:
+If `/bin/bash` is unavailable, try:
 
 ```bash
 docker run -it --name dimva_work dimva:35-final /bin/sh
@@ -65,23 +67,23 @@ docker run -it --name dimva_work dimva:35-final /bin/sh
 
 Once inside the container:
 
-* Navigate to the project directory.
-* Follow the `README.md` file provided **inside the container** for detailed instructions.
+* Navigate to the main project directory.
+* Follow the `README.md` file provided **inside the container** for detailed instructions on running the artifact.
 
 **Important:**
 Ignore any Docker image building instructions mentioned in the internal `README.md`, as the image has already been prebuilt.
 
 ---
 
-## 5. Restarting the Container
+## 5. Restarting or Removing the Container
 
-To exit:
+To exit the container:
 
 ```bash
 exit
 ```
 
-To restart later:
+To restart it later:
 
 ```bash
 docker start -ai dimva_work
