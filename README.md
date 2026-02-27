@@ -58,7 +58,7 @@ docker run -it --name dimva_35 dimva:35-final
 If it does not work, try `sh` or `bash` explicitely as follows:
 
 ```bash
-docker run -it --name dimva_work dimva:35-final /bin/sh
+docker run -it --name dimva_35 dimva:35-final /bin/sh
 ```
 
 ---
